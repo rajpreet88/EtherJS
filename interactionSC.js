@@ -115,10 +115,14 @@ const contractInteraction = async () => {
     console.log(`Contract Number Value: ${num}`)
 
     let contractBalance = await walletContract.contractBalance();
-    console.log(`Contract balance: ${contractBalance}`);
+    let contractEthBalance = ethers.utils.formatEther(contractBalance);
+    console.log(`Contract balance: ${contractEthBalance} ETH`);
 
     let userBalance = await walletContract.accountBalance(`0x1A97E9bE190d60Aa1BA810Ff4a7Cfa36ea0ae0D8`);
-    console.log(`User account Balance: ${userBalance}`)
+    let userEthBalance = ethers.utils.formatEther(userBalance);
+    console.log(`User account Balance: ${userEthBalance} ETH`);
+
+    // console.log(`User account Balance: ${userBalance} WEI`);
     // const balethContract = ethers.utils.formatEther(contractBalance);
     // console.log("Contract Balance:", balethContract);
 }
