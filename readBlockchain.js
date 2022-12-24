@@ -11,8 +11,14 @@ const readBlockchain = async () => {
 
     const balance = await provider.getBalance(`0x1324c0fb6f45f3bf1aaa1fcdc08f17431f53ded7`);
     console.log("Account Balance in BigNumber: ", balance); // Balance in Big Number
-    console.log(`Account Balance in Wei: ${balance} Wei`); // Balance in Wei
-    const balanceETH = ethers.utils.formatEther(balance);
-    console.log(`Account Balance in ETH: ${balanceETH} ETH`); // Balance in ETH
+    // console.log(`Account Balance in Wei: ${balance} Wei`); // Balance in Wei
+    // const balanceETH = ethers.utils.formatEther(balance);
+    // console.log(`Account Balance in ETH: ${balanceETH} ETH`); // Balance in ETH
+    const balanceEther = ethers.utils.formatEther(balance);
+    console.log("Account Balance in Ether: ",balanceEther);
+
+    const balanceWei = ethers.utils.parseEther(balanceEther);
+    console.log("Account Balance in Wei: ", balanceWei);
+    
 }
 readBlockchain();
