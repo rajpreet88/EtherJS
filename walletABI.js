@@ -92,4 +92,4 @@ const walletABI = [
     }
 ]
 
-module.exports = {walletABI};
+module.exports = { walletABI };
